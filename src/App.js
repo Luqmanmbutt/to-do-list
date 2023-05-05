@@ -3,7 +3,7 @@ import React from 'react'
 
 function App() {
 
-  let itemResult = "" 
+  let itemResult = ""
 
   const itemList = []
 
@@ -17,23 +17,28 @@ function App() {
     event.preventDefault()
     itemList.push(itemResult)
     event.target.reset();
-    console.log("result", itemList)
   }
 
 
   return (
     <div className='app-wrapper'>
-
       <div className="main-container">
-        <form className="form-container"onSubmit={submitValue}>
+        <form className="form-container" onSubmit={submitValue}>
           <input className="item-bar" type="text" onChange={onTextChange}></input>
           <button className="btn" >Add</button>
         </form>
         <ul>
+          {itemList.map(info => {  
+            console.log("info", info)
+            return (
+            <>
+              <li>
+                {info}
+              </li>
+            </>
+            )
+          })}
 
-          <li>
-            {itemList}
-          </li>
         </ul>
       </div>
     </div>

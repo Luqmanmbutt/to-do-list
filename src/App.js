@@ -1,22 +1,25 @@
 import './App.css';
-import React, { useState } from 'react'
+import React from 'react'
 
 function App() {
 
   let itemResult = "" 
 
-  const [itemList, setItemList] = useState([])
+  const itemList = []
+
 
   const onTextChange = (event) => {
     itemResult = event.target.value
-    console.log("result",itemResult)
   }
 
   const submitValue = (event) => {
+    // event.preventDefault() stops it from refreshing the page 
     event.preventDefault()
-    setItemList(itemResult)
-    
+    itemList.push(itemResult)
+    event.target.reset();
+    console.log("result", itemList)
   }
+
 
   return (
     <div className='app-wrapper'>

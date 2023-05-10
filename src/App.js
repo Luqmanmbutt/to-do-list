@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 function App() {
 
-  
+
   const [list, setList] = useState([])
   const [itemList, setItemList] = useState("")
 
@@ -14,9 +14,13 @@ function App() {
   const submitValue = (event) => {
     // event.preventDefault() stops it from refreshing the page 
     event.preventDefault()
-    if (itemList !== ""){
-      setList([list, itemList]);
+
+    if (itemList !== "") {
+
+      setList([...list, itemList]);
+
       setItemList('')
+
     }
     event.target.reset();
   }
@@ -24,21 +28,21 @@ function App() {
 
   return (
     <div className='app-wrapper'>
-      <div className='title'>To Do List </div>
+      <div className='title'>ToDo List </div>
       <div className="main-container">
         <form className="form-container" onSubmit={submitValue}>
           <input className="item-bar" type="text" value={itemList} onChange={onTextChange}></input>
           <button className="btn" >Add</button>
         </form>
-        <ul>      
-          {list.map(item => {  
+        <ul>
+          {list.map(item => {
             return (
-            <>
-              <li >
-                {item}
-                
-              </li>
-            </>
+              <>
+                <li className='list'>
+                  {item}
+
+                </li>
+              </>
             )
           })}
 

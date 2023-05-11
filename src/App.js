@@ -14,13 +14,22 @@ function App() {
   const submitValue = (event) => {
     // event.preventDefault() stops it from refreshing the page 
     event.preventDefault()
-
-    if (itemList !== "") {
-
+// .length return the number of items in the array.
+    if (itemList.length > 0) {
+      /*let numbers = [0, 1, 2]
+        add a new number to the array. in JS you use the method .push() (this is called in vanilla JS, you use the .push() method)
+        IN REACT, we use the spread operator.
+        [...list] -> will put all the items that are in the list array
+        [...list, itemList] -> it will ALSO add infront of all the list items, the itemList items.
+        const list = [0,1,2]
+        const itemList = [{name: "hamza"}, 4]
+        const newArray = [...list, itemList]
+        const new Array if you log it will show = [0,1,2,{name:},4]
+      */
       setList([...list, itemList]);
 
       setItemList('')
-
+ 
     }
     event.target.reset();
   }
@@ -38,10 +47,10 @@ function App() {
           {list.map(item => {
             return (
               <>
-                <li className='list'>
-                  {item}
-
-                </li>
+              <li className="item-list">
+              <input  value={item} type="checkbox" />
+              <span>{item}</span>
+              </li>
               </>
             )
           })}

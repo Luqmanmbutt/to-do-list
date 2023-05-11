@@ -3,7 +3,7 @@
 /* FONT FOR TITLE */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-.list {
+.item-list {
   font-family: 'Nanum Pen Script', cursive;
   font-size: 25px;
 }

@@ -7,6 +7,10 @@ function App() {
   const [list, setList] = useState([])
   const [itemList, setItemList] = useState("")
 
+  const removeItem = () => {
+    setList(list.splice(1))
+  }
+
   const onTextChange = (event) => {
     setItemList(event.target.value)
   }
@@ -28,10 +32,10 @@ function App() {
       */
       setList([...list, itemList]);
 
+      
       setItemList('')
  
     }
-    event.target.reset();
   }
 
 
@@ -47,10 +51,13 @@ function App() {
           {list.map(item => {
             return (
               <>
-              <li className="item-list">
+              <div className="item-list">
               <input  value={item} type="checkbox" />
+              <button className='delete-btn' onClick={removeItem}>
+
+              </button>
               <span>{item}</span>
-              </li>
+              </div>
               </>
             )
           })}

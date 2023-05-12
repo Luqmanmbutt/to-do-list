@@ -6,25 +6,40 @@ function App() {
 
   const [list, setList] = useState([])
   const [itemList, setItemList] = useState("")
+// creating a variable to conditionally render a css class if ture 
+  const [checkbox, setCheckbox] = useState(false)
+
+  const checkboxToggle = (event) => {
+    setCheckbox(event.target.checked)
+
+    console.log("checkbox", checkbox)
+  }
 
   const removeItem = (event) => {
-    
-    setItemList(list.pop())
-    
-    
-    
+    // indexOf return the index position inside event 
+    // indexPosition = to the index position your clicking on from the list
+
+    //bug is that if there are 2 of the same strings being passed through indexOf it return the index position of the first one it finds.
+    const indexPosition = list.indexOf(event.target.value)
+    console.log("indexPosition", indexPosition)
+
+
+    setItemList(list.splice(indexPosition, 1))
+
+    // console.log("list", list)
+
   }
 
 
   const onTextChange = (event) => {
     setItemList(event.target.value)
-    
+
   }
 
   const submitValue = (event) => {
     // event.preventDefault() stops it from refreshing the page 
     event.preventDefault()
-// .length return the number of items in the array.
+    // .length return the number of items in the array.
     if (itemList.length > 0) {
       /*let numbers = [0, 1, 2]
         add a new number to the array. in JS you use the method .push() (this is called in vanilla JS, you use the .push() method)
@@ -38,9 +53,9 @@ function App() {
       */
       setList([...list, itemList]);
 
-      
+
       setItemList('')
- 
+
     }
     event.target.reset();
   }
@@ -58,13 +73,16 @@ function App() {
           {list.map(item => {
             return (
               <>
-              <div className="item-list">
-              <input  value={item} type="checkbox" />
-              <button className='delete-btn' onClick={removeItem}>
+                <div className="item-list">
+                  <input value={item} type="checkbox" onClick={checkboxToggle}/>
+                  <button className='delete-btn' value={item} onClick={removeItem}>
+                  {/*  */}
+                  </button>
 
-              </button>
-              <span>{item}</span>
-              </div>
+                  <div className={checkbox ? "list-text-checked" : "list-text-unchecked"}>
+                    {item}
+                  </div>
+                </div>
               </>
             )
           })}

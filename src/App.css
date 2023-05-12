@@ -67,3 +67,11 @@ body{
   height: 19px;
   
 }
+
+.list-text-unchecked {
+  color: blue
+}
+
+.list-text-checked {
+  color: red;
+}

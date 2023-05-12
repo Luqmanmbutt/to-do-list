@@ -7,12 +7,18 @@ function App() {
   const [list, setList] = useState([])
   const [itemList, setItemList] = useState("")
 
-  const removeItem = () => {
-    setList(list.splice(1))
+  const removeItem = (event) => {
+    
+    setItemList(list.pop())
+    
+    
+    
   }
+
 
   const onTextChange = (event) => {
     setItemList(event.target.value)
+    
   }
 
   const submitValue = (event) => {
@@ -36,6 +42,7 @@ function App() {
       setItemList('')
  
     }
+    event.target.reset();
   }
 
 

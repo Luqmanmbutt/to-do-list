@@ -6,14 +6,13 @@ function App() {
 
   const [list, setList] = useState([])
   const [itemList, setItemList] = useState("")
-// creating a variable to conditionally render a css class if ture 
+  // creating a variable to conditionally render a css class if ture 
   const [checkbox, setCheckbox] = useState(false)
 
-  const checkboxToggle = (event) => {
-    setCheckbox(event.target.checked)
-
-    console.log("checkbox", checkbox)
-  }
+  // const checkboxToggle = (event) => {
+  //   setCheckbox(event.target.checked)
+  //   console.log("checkbox", event.target.checked)
+  // }
 
   const removeItem = (event) => {
     // indexOf return the index position inside event 
@@ -74,14 +73,17 @@ function App() {
             return (
               <>
                 <div className="item-list">
-                  <input value={item} type="checkbox" onClick={checkboxToggle}/>
+                  {/* <input value={item} type="checkbox" /> */}
                   <button className='delete-btn' value={item} onClick={removeItem}>
-                  {/*  */}
+                    {/*  */}
                   </button>
+                  {/* <input type= "checkbox" className={checkbox ? "list-text-checked" : "list-text-unchecked"} /> */}
+                  <input type="checkbox" className="list-text" />
 
-                  <div className={checkbox ? "list-text-checked" : "list-text-unchecked"}>
+                  <label>
                     {item}
-                  </div>
+                  </label>
+
                 </div>
               </>
             )

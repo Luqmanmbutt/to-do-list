@@ -63,15 +63,23 @@ body{
   height: 45px;
   border-radius: 5px;
 }
+
+.btn:hover {
+  background-color: red;
+}
 .delete-btn {
   height: 19px;
   
 }
 
-.list-text-unchecked {
-  color: blue
+.list-text{
+  color:#000000
+  
 }
 
-.list-text-checked {
+.list-text:checked + label {
+  height: 20px;
+  width: 20px;
   color: red;
+  text-decoration: line-through;
 }

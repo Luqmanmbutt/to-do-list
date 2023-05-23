@@ -20,12 +20,13 @@ function App() {
 
     //bug is that if there are 2 of the same strings being passed through indexOf it return the index position of the first one it finds.
     const indexPosition = list.indexOf(event.target.value)
-    console.log("indexPosition", indexPosition)
 
 
     setItemList(list.splice(indexPosition, 1))
 
     // console.log("list", list)
+    
+
 
   }
 
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <div className='app-wrapper'>
+       {/* parent container */}
       <div className='title'>ToDo List </div>
       <div className="main-container">
         <form className="form-container" onSubmit={submitValue}>
@@ -75,7 +77,7 @@ function App() {
                 <div className="item-list">
                   {/* <input value={item} type="checkbox" /> */}
                   <button className='delete-btn' value={item} onClick={removeItem}>
-                    {/*  */}
+                    Delete
                   </button>
                   {/* <input type= "checkbox" className={checkbox ? "list-text-checked" : "list-text-unchecked"} /> */}
                   <input type="checkbox" className="list-text" />

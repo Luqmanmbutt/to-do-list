@@ -95,12 +95,13 @@ body{
   color:#000000;
   position: relative;
   right: 40px;
+  font-weight: bolder;
   
 }
 
 .list-text:checked + label {
   height: 20px;
   width: 20px;
-  color: rgba(0, 0, 0, 0.413);
+  color: rgba(0, 0, 0, 0.248);
   text-decoration: line-through;
 }

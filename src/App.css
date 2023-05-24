@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+/* FONT FOR ITEM  */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+/* FONT FOR TITLE */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+.item-list {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 30px;
+  text-decoration: underline;
+  justify-content: flex-end;
+  
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  height: 100vh;
+  background: #5b0326;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-container {
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-wrapper {
+  height: 850px;
+  width: 1550px;
+  background: #5b0326;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.title {
+  font-size: 80px;
+  /* border: #000000 2px solid; */
+  width: 540px;
+  /* border-radius: 10px; */
+  font-family: 'Nanum Pen Script', cursive;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  color:white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  border: 2px solid black;
+  background: white;
+  border-radius: 10px;
+  width: 35%;
+  min-height: 45%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-bar {
+  width: 50%;
+  height: 45px;
+  border-radius: 10px;
+  color: #111111;
+  font-weight: 500;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+}
+
+.btn{
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  width: 35%;
+  height: 45px;
+  border-radius: 5px;
+  
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+.delete-btn {
+  height: 19px;
+  position: relative;
+  left: 360px;
+  cursor: pointer;
+  background: rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  color: #ffffff;
+ 
+  
+}
+
+.list-text{
+  color:#000000;
+  position: relative;
+  right: 40px;
+  font-weight: bolder;
+  
+}
+
+.list-text:checked + label {
+  height: 20px;
+  width: 20px;
+  color: rgba(0, 0, 0, 0.248);
+  text-decoration: line-through;
 }
